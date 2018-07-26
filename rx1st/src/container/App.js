@@ -1,8 +1,7 @@
-import React from 'react';
 import { connect } from 'react-redux';
 
-import App from '../components/App';
-import CounterAction from '../actions/Counter'
+import { AppComponent } from '../components';
+import { CounterAction } from '../actions'
 
 function mapStateToProps(state) {
     console.log(state.counter.value);
@@ -22,4 +21,4 @@ let mapDispatchToProps = (dispatch) => {
         }
     }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent)

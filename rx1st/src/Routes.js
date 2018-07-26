@@ -1,23 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Reducers from './reducers';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { syncHistoryWithStore } from 'react-router-redux';
-import App from './container/App';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { App } from './container';
 
 const store = createStore(Reducers);
 
-export class Routes extends Component {
+export class Routes extends React.Component {
   render(){
     return (
     <Provider store={store}>
       <BrowserRouter>
-        <Route exact path="/" component={App}/>
+        <Main />
       </BrowserRouter>
     </Provider>
     )
   }
 }
-  
- export default Routes;
+
+const Main = () => (
+  <main>
+    <Switch>
+      <Route exact path="/" component={App}/>
+    </Switch>
+  </main>
+)
+export default Routes;

@@ -1,6 +1,6 @@
 import actionConfig from '../actionConfig'
 
-export default {
+export const CounterAction = {
     INCREMENT: () => {
         return { type: actionConfig.types.INCREMENT }
     },

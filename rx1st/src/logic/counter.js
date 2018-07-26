@@ -20,8 +20,6 @@ export default {
             saveCount({ value: 0 })
         }
         value = getCount()
-        console.log("koko")
-        console.log(value)
         
         return value
     }
